@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student table</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        body{
+            background-color: rgb(201, 46, 46);
+            color:pink;
+            font-weight: 600;
+        }
+            nav{
+            background-color: pink;
+            color:red;
+            font-weight: bolder;
+           
+        }
+        table{
+            width:80%; 
+            border: 3px solid pink;
+       
+           
+        }
+        tr,td,th{
+            padding: 5px;
+            border:2px solid white;
+            text-align: center;
+           
+        }
+        th{
+            color:pink;
+           
+            border: 3px solid pink;
+        }
+       td{
+        color:white;
+       }
+        input{
+           margin: 10px;
+           background-color: pink;
+           border: 3px solid pink;
+        border-radius: 6px;
+        }
+        #form,.table{
+        
+            display:flex;
+            justify-content: center;
+        }
+    
+    button{
+        background-color: pink;
+        border: 3px solid pink;
+        border-radius: 6px;
+        color: red;
+    }
+    </style>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  
+  <!-- As a heading -->
+  <nav class="navbar ">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">STUDENT DATA</span>
+    </div>
+  </nav>
+
+<div class="main">
+    <p>Enter student data in below form</p>
+    <div id="form">
+    <fieldset style="width:30%;border:2px solid;border-radius: 10px; ">
+        <legend>STUDENT DATA</legend>
+        <label for="name"  >Student name:</label>
+        <input type="text" placeholder="student name" id="name"><br><br>
+        <label for="email"  >Student email:</label>
+        <input type="email" placeholder="student email" id="email"><br><br>
+        <label for="phone"  >Student phone number:</label>
+        <input type="tel" placeholder="student phone" id="phone">
+        <br><br>
+        <label for="sub"  >Subject:</label>
+        <input type="text" placeholder="subject" id="sub"><br><br>
+        <label for="place"  >State:</label>
+        <input type="text" placeholder="place" id="place"><br><br>
+        <div>
+        <button onclick="tab()">add student</button><br><br>
+    </fieldset>
+</div>
+  <br>
+</div>
+
+<div class="table">
+<table>
+<tr>
+<th>name</th>
+<th>email</th>
+<th>phone</th>
+<th>subject</th>
+<th>State</th>
+</tr>
+<tr>
+    <td>yash</td>
+    <td>yash12@gmail.com</td>
+    <td>9685745263</td>
+    <td>math</td>
+    <td>karnataka</td>
+</tr>
+</table>
+</div>
+
+</div>
+
+<script type="text/javascript">
+
+function tab(){
+var name=document.getElementById("name");
+var email=document.getElementById("email");
+var phone=document.getElementById("phone");
+var subject=document.getElementById("sub");
+var place=document.getElementById("place");
+
+ let sname=name.value;
+ let semail=email.value;
+ let sphone=phone.value;
+ let ssub=subject.value;
+ let splace=place.value;
+ 
+ 
+ if(sname!=' ' && semail!='' && sphone!='' && ssub!='' && splace!='')
+{
+let table=document.querySelector('table');
+let tr=document.createElement('tr');
+let tdname=document.createElement('td');
+let tdemail=document.createElement('td');
+let tdphone=document.createElement('td');
+let tdsubject=document.createElement('td');
+let tdplace=document.createElement('td');
+
+tdname.innerHTML=sname;
+tdemail.innerHTML=semail;
+tdphone.innerHTML=sphone;
+tdsubject.innerHTML=ssub;
+tdplace.innerHTML=splace;
+
+tr.appendChild(tdname);
+tr.appendChild(tdemail);
+tr.appendChild(tdphone);
+tr.appendChild(tdsubject);
+tr.appendChild(tdplace);
+
+table.appendChild(tr);
+}
+else{
+alert('please add details');
+}
+
+}
+
+</script>
+</body>
+</html>
